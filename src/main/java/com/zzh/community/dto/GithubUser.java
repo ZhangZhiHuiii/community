@@ -1,4 +1,4 @@
-package com.zzh.community.community.dto;
+package com.zzh.community.dto;
 
 public class GithubUser {
     private String login;
