@@ -3,8 +3,8 @@ package com.zzh.community.dto;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PaginationDTO {
-    private List<QuestionDTO> questionDTOS;
+public class PaginationDTO<T> {
+    private List<T> data;
     private boolean showPrevious;
     private boolean showFirstPage;
     private boolean showNext;
@@ -53,12 +53,12 @@ public class PaginationDTO {
 
     }
 
-    public List<QuestionDTO> getQuestionDTOS() {
-        return questionDTOS;
+    public List<T> getData() {
+        return data;
     }
 
-    public void setQuestionDTOS(List<QuestionDTO> questionDTOS) {
-        this.questionDTOS = questionDTOS;
+    public void setData(List<T> data) {
+        this.data = data;
     }
 
     public boolean isShowPrevious() {

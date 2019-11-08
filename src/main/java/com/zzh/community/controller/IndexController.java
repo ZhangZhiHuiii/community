@@ -25,12 +25,13 @@ public class IndexController {
     @GetMapping("/")
     public String index(HttpServletRequest request,Model model,
                         @RequestParam(name = "page",defaultValue = "1")Integer page,
-                        @RequestParam(name = "size",defaultValue = "2")Integer size){
-        User user = (User) request.getSession().getAttribute("user");
-        if (user == null){
-            return "redirect:/";
-        }
-        PaginationDTO pagination = questionService.list(page,size);
+                        @RequestParam(name = "size",defaultValue = "2")Integer size,
+                        @RequestParam(name = "search",required = false)String  search){
+//        User user = (User) request.getSession().getAttribute("user");
+//        if (user == null){
+//            return "redirect:/";
+//        }
+        PaginationDTO pagination = questionService.list(search,page,size);
         model.addAttribute("pagination",pagination);
         return "index";
     }

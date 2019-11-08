@@ -24,7 +24,11 @@ mybatis:
 
 #showSql
 logging:
+  file: logs/community
+    max-size: 1024
   level:
+    root: info
     com:
-      example:
+      zzh:
         mapper : debug
+
